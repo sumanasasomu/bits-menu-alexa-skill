@@ -39,7 +39,7 @@ const LaunchRequestHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .reprompt(speechText)
+      .reprompt('you can ask me for something like Friday Dinner menu')
       .getResponse();
   }
 };
