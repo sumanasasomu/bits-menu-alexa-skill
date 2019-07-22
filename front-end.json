@@ -49,6 +49,8 @@
                         }
                     ],
                     "samples": [
+                        "what is {day} {meals} menu",
+                        "{day} {meals} menu",
                         "what is the mess menu",
                         "what is mess menu",
                         "what is the menu",
