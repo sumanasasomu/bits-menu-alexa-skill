@@ -1,0 +1,246 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "b p h c menu",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ReadMenuIntent",
+                    "slots": [
+                        {
+                            "name": "day",
+                            "type": "day",
+                            "samples": [
+                                "at {day}",
+                                "on {day}",
+                                "{day}",
+                                "of {day}",
+                                "for {day}"
+                            ]
+                        },
+                        {
+                            "name": "meals",
+                            "type": "meals",
+                            "samples": [
+                                "in {meals}",
+                                "of {meals}",
+                                "for {meals}",
+                                "{meals}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "what is the mess menu",
+                        "what is mess menu",
+                        "what is the menu",
+                        "tell me the mess menu of {day} for {meals}",
+                        "tell me the mess menu for {meals} on {day}",
+                        "what is there for {meals} on {day}",
+                        "can you please let me know the menu for  {meals} on {day}",
+                        "can you tell me  what is there for {day} {meals}",
+                        "menu for {meals}",
+                        "{meals} menu",
+                        "{day} menu",
+                        "{meals}",
+                        "{day}",
+                        "menu for {meals} on {day}",
+                        "for {day} {meals} menu",
+                        "what is there for {day} {meals}",
+                        "what is for {day} {meals}",
+                        "what is there for {meals} {day}",
+                        "{day} {meals}",
+                        "ask for {day} {meals} menu",
+                        "tell me the menu for {day} {meals}",
+                        "what is the menu for {day} {meals}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "meals",
+                    "values": [
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "Dinner",
+                                "synonyms": [
+                                    "night's",
+                                    "night",
+                                    "dinner's",
+                                    "supper"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "Lunch",
+                                "synonyms": [
+                                    "afternoon's",
+                                    "lunch's",
+                                    "afternoon"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "Breakfast",
+                                "synonyms": [
+                                    "morning's",
+                                    "tiffin",
+                                    "breakfast's",
+                                    "morning"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "day",
+                    "values": [
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "Sunday",
+                                "synonyms": [
+                                    "sundays",
+                                    "sunday's"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "Saturday",
+                                "synonyms": [
+                                    "saturdays",
+                                    "saturday's"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "Friday",
+                                "synonyms": [
+                                    "fridays",
+                                    "friday's"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "Thursday",
+                                "synonyms": [
+                                    "thursdays",
+                                    "thursday's"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "Wednesday",
+                                "synonyms": [
+                                    "wednesdays",
+                                    "wednesday's"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "Tuesday",
+                                "synonyms": [
+                                    "tuesdays",
+                                    "tuesday's"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "Monday",
+                                "synonyms": [
+                                    "mondays",
+                                    "monday's"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "ReadMenuIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "day",
+                            "type": "day",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.522084992082.1426559514987"
+                            }
+                        },
+                        {
+                            "name": "meals",
+                            "type": "meals",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.522084992082.46091193168"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.522084992082.1426559514987",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you please mention for which day of the week you would like to know the menu for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.522084992082.46091193168",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "For which meal do you want to know the menu for?"
+                    }
+                ]
+            }
+        ]
+    }
+}
