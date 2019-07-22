@@ -35,12 +35,11 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to Bits Hyderabad Mess, you can ask me for something like Friday Dinner menu!';
+    const speechText = 'Welcome to B.P.H.C Mess Menu, you can ask me for something like Friday Dinner menu';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('from launch-request-handler', speechText)
       .getResponse();
   }
 };
@@ -57,7 +56,7 @@ const ReadMenuIntenthandler = {
   	var output_msg = menu[day][meal];
     return handlerInput.responseBuilder
       .speak('Here is the Menu, ' + output_msg.toUpperCase())
-      .withSimpleCard('Menu', output_msg.toUpperCase())
+      .withShouldEndSession(true)
       .getResponse();
   }
 };
@@ -73,7 +72,6 @@ const HelpIntentHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Help', speechText)
       .getResponse();
   }
 };
@@ -89,7 +87,6 @@ const CancelAndStopIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('End', speechText)
       .getResponse();
   }
 };
